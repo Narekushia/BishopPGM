@@ -1,0 +1,11 @@
+name: AutoTeamOCN
+description: De la merde
+main: ch.alan736.autoteamocn.Main
+version: 1.0
+authors: [Alan736]
+prefix: AutoTeamOCN
+
+commands :
+    autoteamocn :
+        usage : /autoteamocn <playername>
+        description : de la merde
