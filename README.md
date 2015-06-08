@@ -3,7 +3,7 @@ BishopPGM
 
 What is this ?
 ------
-This is a Minecraft plugin which add features for [NotCardinalPGM](https://github.com/Alan736/NotCardinalPGM) (this work also with [CardinalPGM](https://github.com/twizmwazin/CardinalPGM) but you have to change the dependency name to `Cardinal` in the `plugin.yml`)
+This is a Minecraft plugin which add features for [NotCardinalPGM](https://github.com/Alan736/NotCardinalPGM) (this work also with [CardinalPGM](https://github.com/twizmwazin/CardinalPGM) but you have to change the dependency name to `Cardinal` in the `plugin.yml` and change the dependency from `NotCardinalPGM` to `CardinalPGM`)
 
 Features
 ------

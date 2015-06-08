@@ -20,11 +20,10 @@ import in.twizmwaz.cardinal.util.TeamUtils;
 
 public class Commands {
 
-    @SuppressWarnings("deprecation")
 	@Command(aliases = {"autoteam"}, desc = "Compose a team with an OCN Team", min = 2, max = 2, usage = "<teamname> <OCNteamname>")
     @CommandPermissions("autoteam.autoteam")
 	public static void autoteam(final CommandContext cmd, CommandSender sender) throws CommandException {
-    	@SuppressWarnings("rawtypes")
+ 
 		TeamModule team = TeamUtils.getTeamByName(cmd.getString(0));
     	
     	if (team == null)
