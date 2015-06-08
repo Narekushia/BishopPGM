@@ -1,14 +1,13 @@
 /**
  * @author Alan736
  */
-package ch.alan736.autoteamocn;
+package ch.alan736.bishoppgm;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -20,14 +19,16 @@ import com.sk89q.minecraft.util.commands.CommandsManager;
 import com.sk89q.minecraft.util.commands.MissingNestedCommandException;
 import com.sk89q.minecraft.util.commands.WrappedCommandException;
 
-public class AutoTeamOCN extends JavaPlugin implements Listener{
+public class BishopPGM extends JavaPlugin {
 
 	private CommandsManager<CommandSender> commands;
 	
-	public void onEnabled(){
+	@Override
+	public void onEnable(){
 		setupCommands();
 	}
 	
+	@Override
 	public void onDisable(){
 		
 	}
@@ -58,6 +59,7 @@ public class AutoTeamOCN extends JavaPlugin implements Listener{
 		} catch(CommandException e) {
 			sender.sendMessage(ChatColor.RED + e.getMessage());
 		}
+		
 		return true;
     }
     
@@ -70,6 +72,6 @@ public class AutoTeamOCN extends JavaPlugin implements Listener{
         };
         CommandsManagerRegistration cmdRegister = new CommandsManagerRegistration(this, this.commands);
         cmdRegister.register(Commands.class);
-        cmdRegister.register(WhitelistCommands.class);
+        cmdRegister.register(WhitelistCommands.WhitelistParentCommand.class);
     } 
 }

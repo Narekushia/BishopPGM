@@ -1,4 +1,4 @@
-package ch.alan736.autoteamocn;
+package ch.alan736.bishoppgm;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -23,11 +23,11 @@ public class WhitelistCommands {
 	}
 
 	@SuppressWarnings("deprecation")
-	@Command(aliases = {"add"}, desc = "Add players of a team in the whitelist", min = 1, usage = "[teamname] - Team name without spaces and special characters")
+	@Command(aliases = {"add"}, desc = "Add all team members in the whitelist", min = 1, max = 1, usage = "<OCNteamname>")
     @CommandPermissions("autoteam.wlteam.add")
 	public static void add(final CommandContext cmd, CommandSender sender) throws CommandException {
 		ArrayList<String> Players = OCNUtils.GetPlayersInATeam(cmd.getString(0));
-		if (Players.isEmpty())
+		if (Players == null)
 			throw new CommandException("Team not found on OCN");
 		
     	for(String p : Players) {
@@ -38,11 +38,11 @@ public class WhitelistCommands {
     }
 	
 	@SuppressWarnings("deprecation")
-	@Command(aliases = {"remove"}, desc = "Remove players of a team in the whitelist", min = 1, usage = "[teamname] - Team name without spaces and special characters")
+	@Command(aliases = {"remove"}, desc = "Remove all team members in the whitelist", min = 1, max = 1, usage = "<OCNteamname>")
 	@CommandPermissions("autoteam.wlteam.remove")
 	public static void remove(final CommandContext cmd, CommandSender sender) throws CommandException {
 		ArrayList<String> Players = OCNUtils.GetPlayersInATeam(cmd.getString(0));
-		if (Players.isEmpty())
+		if (Players == null)
 			throw new CommandException("Team not found on OCN");
 		
     	for(String p : Players) {
@@ -50,7 +50,7 @@ public class WhitelistCommands {
     		Bukkit.getOfflinePlayer(PlayerUUID).setWhitelisted(false);
     	}
     	
-    	sender.sendMessage(ChatColor.DARK_RED + "" + Players.size() + " players removed from the whitelist (" + cmd.getString(0) + ")");
+    	sender.sendMessage(ChatColor.RED + "" + Players.size() + " players removed from the whitelist (" + cmd.getString(0) + ")");
     }
 }
 	
