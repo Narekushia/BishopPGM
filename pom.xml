@@ -9,7 +9,7 @@
   
     <properties>
         <plugin.name>BishopPGM</plugin.name>
-        <plugin.mainClass>ch.alan736.autoteamocn.AutoTeamOCN</plugin.mainClass>
+        <plugin.mainClass>ch.alan736.bishoppgm.BishopPGM</plugin.mainClass>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
